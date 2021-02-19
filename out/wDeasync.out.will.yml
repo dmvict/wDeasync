@@ -1269,6 +1269,4 @@ module:
       ../.im.will.yml:
         hash: 4fff6eab6f6e8c60751f2a6051617561
         size: 5489
-      wDeasync.out.will.yml:
-        hash: 24e03b4ebbc82a9ceee55fa6a9ea3c14
-        size: 31745
+      wDeasync.out.will.yml: *ref_0
