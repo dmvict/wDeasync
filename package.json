@@ -1,6 +1,6 @@
 {
   "name": "wdeasync",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main": "index.js",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
@@ -39,7 +39,7 @@
   "dependencies": {
     "bindings": "^1.5.0",
     "node-addon-api": "^1.7.1",
-    "@mapbox/node-pre-gyp": "1.0.0"
+    "@mapbox/node-pre-gyp": "1.0.1"
   },
   "repository": {
     "type": "git",
