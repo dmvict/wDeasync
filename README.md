@@ -19,26 +19,25 @@ What really needed is a way to block subsequent JavaScript from running without 
 
 DeAsync supports both alternatives.
 
-
-
 ## Usages
-
 
 * Generic wrapper of async function with conventional API signature `function(p1,...pn,function cb(error,result){})`. Returns `result` and throws `error` as exception if not null:
 
 ```javascript
-var deasync = require('deasync');
-var cp = require('child_process');
-var exec = deasync(cp.exec);
+var wdeasync = require( 'wdeasync' );
+var cp = require( 'child_process' );
+var exec = wdeasync( cp.exec );
 // output result of ls -la
-try{
-    console.log(exec('ls -la'));
+try
+{
+  console.log(exec('ls -la'));
 }
-catch(err){
-    console.log(err);
+catch( err )
+{
+  console.log( err );
 }
-// done is printed last, as supposed, with cp.exec wrapped in deasync; first without.
-console.log('done');
+// done is printed last, as supposed, with cp.exec wrapped in wdeasync; first without.
+console.log( 'done' );
 ```
 
 * For async function with unconventional API, for instance `function asyncFunction(p1,function cb(res){})`, use `loopWhile(predicateFunc)` where `predicateFunc` is a function that returns boolean loop condition
@@ -46,24 +45,28 @@ console.log('done');
 ```javascript
 var done = false;
 var data;
-asyncFunction(p1,function cb(res){
-    data = res;
-    done = true;
+asyncFunction(p1,function cb(res)
+{
+  data = res;
+  done = true;
 });
-require('deasync').loopWhile(function(){return !done;});
+require( 'wdeasync' ).loopWhile( function(){ return !done; } );
 // data is now populated
 ```
 
 * Sleep (a wrapper of setTimeout)
 
 ```javascript
-function SyncFunction(){
+function SyncFunction()
+{
   var ret;
-  setTimeout(function(){
+  setTimeout(function()
+  {
       ret = "hello";
   },3000);
-  while(ret === undefined) {
-    require('deasync').sleep(100);
+  while(ret === undefined)
+  {
+    require( 'wdeasync' ).sleep(100);
   }
   // returns hello with sleep; undefined without
   return ret;
@@ -71,43 +74,13 @@ function SyncFunction(){
 ```
 
 ## Installation
-Except on a few [ platforms + Node version combinations](https://github.com/abbr/deasync-bin) where binary distribution is included, DeAsync uses node-gyp to compile C++ source code so you may need the compilers listed in [node-gyp](https://github.com/TooTallNate/node-gyp). You may also need to [update npm's bundled node-gyp](https://github.com/TooTallNate/node-gyp/wiki/Updating-npm's-bundled-node-gyp).
+
+Unlike original implementation, this has binary distributed, so C++ compiler is not mandatory requirement. Altought, rare OS + CPU might require to recompile `wdeasync`.
 
 To install, run
 
-```npm install deasync```
-
+```npm install wdeasync```
 
 ## Recommendation
+
 Unlike other (a)sync js packages that mostly have only syntactic impact, DeAsync also changes code execution sequence. As such, it is intended to solve niche cases like the above one. If all you are facing is syntatic problem such as callback hell, using a less drastic package implemented in pure js is recommended.
-
-## Support
-Pull requests and issue reporting are welcome. For issues to be considered by maintainer
-  1. they must be reproducible
-  2. there must be evidence the issue is related to DeAsync
-
-To that end, the issue should contain platform information, error message relevant to DeAsync, and preferably code snippet. If code snippet is supplied, it must be self-contained, i.e. independent from your runtime environment or other modules not explictly specified via `require` in the code snippet.
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2015
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
