@@ -6,8 +6,8 @@ consistency:
     hash: 5e788229bd124e112a4fd1c3d4d21a45
     size: 2110
   ../.im.will.yml: &ref_1
-    hash: 4fff6eab6f6e8c60751f2a6051617561
-    size: 5489
+    hash: 6f2f05216bc8c97bdf9e2c7607598472
+    size: 5495
 module:
   wDeasync.out:
     about:
@@ -190,7 +190,7 @@ module:
         criterion:
           development: 0
       node-pre-gyp:
-        path: 'npm:///@mapbox/node-pre-gyp'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -822,7 +822,7 @@ module:
         criterion:
           development: 0
       node-pre-gyp:
-        path: 'npm:///@mapbox/node-pre-gyp'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1235,5 +1235,5 @@ module:
         hash: 5e788229bd124e112a4fd1c3d4d21a45
         size: 2110
       ../.im.will.yml:
-        hash: 4fff6eab6f6e8c60751f2a6051617561
-        size: 5489
+        hash: 6f2f05216bc8c97bdf9e2c7607598472
+        size: 5495
