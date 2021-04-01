@@ -27,7 +27,7 @@
     "host" : "https://github.com/Wandalen/wDeasync/releases/download/",
     "remote_path" : "{version}"
   },
-  "dependencies" : { "bindings" : "^1.5.0", "node-addon-api" : "^1.7.1", "@mapbox/node-pre-gyp" : "" },
+  "dependencies" : { "bindings" : "^1.5.0", "node-addon-api" : "^1.7.1", "@mapbox/node-pre-gyp" : "1.0.2" },
   "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wDeasync.git" },
   "homepage" : "https://github.com/Wandalen/wDeasync",
   "keywords" : [ "async", "sync", "sleep", "async wrapper" ],
