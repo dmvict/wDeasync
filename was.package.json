@@ -1,6 +1,6 @@
 {
   "name" : "wdeasync",
-  "version" : "0.1.43",
+  "version" : "0.1.44",
   "description" : "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main" : "index.js",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
