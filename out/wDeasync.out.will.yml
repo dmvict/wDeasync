@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wDeasync.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wDeasync.out.will.yml: &ref_0
+    hash: 651d2d7594335da362eceaf273a0e498
+    size: 32268
+  ../.ex.will.yml: &ref_1
     hash: 5e788229bd124e112a4fd1c3d4d21a45
     size: 2110
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 6e9bfc57527b4505c8e192fc1f887d75
     size: 5421
 module:
@@ -16,21 +19,21 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters: &ref_2
+      interpreters:
         - njs >= 10.0.0
-      keywords: &ref_3
+      keywords:
         - async
         - sync
         - sleep
         - async wrapper
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       native: 1
       npm.name: wdeasync
-      npm.scripts: &ref_5
+      npm.scripts:
         install: node-pre-gyp install --update-binary --fallback-to-build
         postinstall: node postinstall.js
         node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
@@ -581,6 +584,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          filePath: 'reflector::exported.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: 'reflector::exported.files.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -670,8 +691,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wDeasync.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wDeasync
@@ -679,14 +701,28 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 10.0.0
+      keywords:
+        - async
+        - sync
+        - sleep
+        - async wrapper
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
+        - Volodymyr M. <volodymyr.migdal@gmail.com>
       native: 1
       npm.name: wdeasync
-      npm.scripts: *ref_5
+      npm.scripts:
+        install: node-pre-gyp install --update-binary --fallback-to-build
+        postinstall: node postinstall.js
+        node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
+        node-pre-gyp-build: node-pre-gyp configure && node-pre-gyp rebuild
+        node-pre-gyp-package: node-pre-gyp package
+        node-pre-gyp-github-release: node-pre-gyp-github publish --release
+        test: node spec
     path:
       module.willfiles:
         criterion:
@@ -1245,3 +1281,6 @@ module:
       ../.im.will.yml:
         hash: 6e9bfc57527b4505c8e192fc1f887d75
         size: 5421
+      wDeasync.out.will.yml:
+        hash: 651d2d7594335da362eceaf273a0e498
+        size: 32268
