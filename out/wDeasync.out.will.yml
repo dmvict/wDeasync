@@ -6,8 +6,8 @@ consistency:
     hash: 5e788229bd124e112a4fd1c3d4d21a45
     size: 2110
   ../.im.will.yml: &ref_1
-    hash: 6f2f05216bc8c97bdf9e2c7607598472
-    size: 5495
+    hash: 6e9bfc57527b4505c8e192fc1f887d75
+    size: 5421
 module:
   wDeasync.out:
     about:
@@ -66,7 +66,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ../
+        path: ..
       repository:
         path: 'git+https:///github.com/Wandalen/wDeasync.git'
       origins:
@@ -157,6 +157,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - ../index.js
+          - ../proto/node_modules/wdeasync
       exported.dir.proto.export:
         criterion:
           generated: 1
@@ -711,7 +715,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ./
+        path: .
       repository:
         path: 'git+https:///github.com/Wandalen/wDeasync.git'
       origins:
@@ -802,6 +806,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - index.js
+          - proto/node_modules/wdeasync
     submodule:
       bindings:
         path: 'npm:///bindings#1.5.0'
@@ -1235,5 +1243,5 @@ module:
         hash: 5e788229bd124e112a4fd1c3d4d21a45
         size: 2110
       ../.im.will.yml:
-        hash: 6f2f05216bc8c97bdf9e2c7607598472
-        size: 5495
+        hash: 6e9bfc57527b4505c8e192fc1f887d75
+        size: 5421
