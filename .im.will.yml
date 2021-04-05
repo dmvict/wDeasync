@@ -90,8 +90,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wDeasync/index.js
-    - /pro/module/wDeasync/proto/node_modules/wdeasync
+    - index.js
+    - proto/node_modules/wdeasync
 reflector:
   reflect.proto:
     inherit: predefined.*
