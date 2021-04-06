@@ -29,11 +29,8 @@ jobs :
         os : [ ubuntu-latest, windows-latest, macos-latest ]
         node-version : [ 14.x ]
     runs-on : ${{ matrix.os }}
-    env :
-      PRIVATE_WTOOLS_BOT_TOKEN : ${{ secrets.PRIVATE_WTOOLS_BOT_TOKEN }}
-      PRIVATE_WTOOLS_BOT_SSH_KEY : ${{ secrets.PRIVATE_WTOOLS_BOT_SSH_KEY }}
     steps :
-    - name : git config
+    - name : Setup git
       run : |
         git config --global core.autocrlf input
         git config --global user.email "testing@testing.com"
@@ -51,7 +48,8 @@ jobs :
       if : "startsWith( steps.getnpmver.outputs.npmver, '6.' )"
       run : npm install -g npm@latest-6
     - run : npm -g i willbe@delta
-    - run : npm i --ignore-scripts
+    - run: npm run clean
+    - run : will .npm.install
     - run : npm list
       continue-on-error : true
     - run : npm run node-pre-gyp-build
