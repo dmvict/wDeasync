@@ -17,9 +17,10 @@
     "node-pre-gyp-build" : "node-pre-gyp configure && node-pre-gyp rebuild",
     "node-pre-gyp-package" : "node-pre-gyp package",
     "node-pre-gyp-github-release" : "node-pre-gyp-github publish --release",
-    "test" : "node spec"
+    "test" : "node proto/wtools/amid/deasync.test",
+    "clean" : "rm -rf build node_modules binding"
   },
-  "files" : [ "binding.gyp", "src", "index.js", "step", "QuickTest.ss", "proto/node_modules" ],
+  "files" : [ "binding.gyp", "cpp", "step", "proto/node_modules", "proto/wtools/amid/deasync" ],
   "binary" :
   {
     "module_name" : "deasync",

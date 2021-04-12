@@ -1,4 +1,4 @@
-var deasync = require('../../index.js')
+var deasync = require('../../deasync/Main.ss')
 var https = require('https')
 
 
