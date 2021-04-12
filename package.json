@@ -1,6 +1,6 @@
 {
   "name" : "wdeasync",
-  "version" : "0.1.57",
+  "version" : "0.1.58",
   "description" : "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main" : "proto/wtools/amid/deasync/Main.ss",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
