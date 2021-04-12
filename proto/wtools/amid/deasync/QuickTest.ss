@@ -1,14 +1,14 @@
 ( function _QuickTest_() {
-  
+
   let assert = require( 'assert' );
-  let deasync = require('./index.js')
+  let deasync = require('./Main.ss')
 
   let ret;
-  setTimeout( () => 
+  setTimeout( () =>
   {
     ret = 'pass'
   }, 100 );
-  while ( ret === undefined ) 
+  while ( ret === undefined )
   deasync.sleep( 10 );
   assert.strictEqual( ret, 'pass' );
 })();

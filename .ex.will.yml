@@ -26,7 +26,7 @@ about :
     node-pre-gyp-build : node-pre-gyp configure && node-pre-gyp rebuild
     node-pre-gyp-package : node-pre-gyp package
     node-pre-gyp-github-release : node-pre-gyp-github publish --release
-    test : node spec
+    test : node proto/wtools/amid/deasync.test
 
 path :
 

@@ -38,7 +38,7 @@ path:
   export: '{path::proto}/**'
   doc: ./doc
   js: index.js
-  cpp: src
+  cpp: cpp
   build: build
   node-pre-gyp: node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
   out.raw.debug:

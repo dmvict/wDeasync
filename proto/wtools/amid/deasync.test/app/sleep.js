@@ -1,4 +1,4 @@
-var deasync = require('../../index.js')
+var deasync = require('../../deasync/Main.ss')
 var sleep = deasync(function (timeout, done) {
   setTimeout(done, timeout)
 })
