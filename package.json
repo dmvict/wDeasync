@@ -1,6 +1,6 @@
 {
   "name" : "wdeasync",
-  "version" : "0.1.53",
+  "version" : "0.1.54",
   "description" : "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main" : "proto/node_modules/wdeasync",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
@@ -17,9 +17,10 @@
     "node-pre-gyp-build" : "node-pre-gyp configure && node-pre-gyp rebuild",
     "node-pre-gyp-package" : "node-pre-gyp package",
     "node-pre-gyp-github-release" : "node-pre-gyp-github publish --release",
-    "test" : "node spec"
+    "test" : "node proto/wtools/amid/deasync.test",
+    "clean" : "rm -rf build node_modules binding"
   },
-  "files" : [ "binding.gyp", "src", "index.js", "step", "QuickTest.ss", "proto/node_modules" ],
+  "files" : [ "binding.gyp", "cpp", "step", "proto/node_modules", "proto/wtools/amid/deasync" ],
   "binary" :
   {
     "module_name" : "deasync",
@@ -32,5 +33,5 @@
   "homepage" : "https://github.com/Wandalen/wDeasync",
   "keywords" : [ "async", "sync", "sleep", "async wrapper" ],
   "engines" : { "node" : ">=10.0.0" },
-  "devDependencies" : { "require-directory" : "^2.1.1", "node-pre-gyp-github" : "1.4.3" }
+  "devDependencies" : { "require-directory" : "^2.1.1", "node-pre-gyp-github" : "" }
 }

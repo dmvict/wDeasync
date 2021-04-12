@@ -34,10 +34,10 @@ path:
     - node_modules
     - build
     - binding
-  proto: ./index.js
+  proto: ./proto
   export: '{path::proto}/**'
   doc: ./doc
-  js: index.js
+  js: proto
   cpp: cpp
   build: build
   binding: binding
@@ -91,7 +91,7 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - index.js
+    - proto/wtools/amid/deasync/Main.ss
     - proto/node_modules/wdeasync
 reflector:
   reflect.proto:
