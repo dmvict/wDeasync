@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wDeasync.out
 consistency:
-  wDeasync.out.will.yml: &ref_0
-    hash: d8df14b8a994c5ada16d51bdc37f8b1e
-    size: 32268
-  ../.ex.will.yml: &ref_1
-    hash: 5e788229bd124e112a4fd1c3d4d21a45
-    size: 2110
-  ../.im.will.yml: &ref_2
-    hash: 0619a72ebdce288832be1010c9fbb09b
-    size: 5379
+  ../.ex.will.yml: &ref_0
+    hash: ed1c8d894b0c628b9ea087c2e0e9706b
+    size: 2136
+  ../.im.will.yml: &ref_1
+    hash: 45e0449cb92b379b27b4ea569b8b2465
+    size: 5540
 module:
   wDeasync.out:
     about:
@@ -19,28 +16,28 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
-      keywords:
+      keywords: &ref_3
         - async
         - sync
         - sleep
         - async wrapper
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       native: 1
       npm.name: wdeasync
-      npm.scripts:
+      npm.scripts: &ref_5
         install: node-pre-gyp install --update-binary --fallback-to-build
         postinstall: node postinstall.js
         node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
         node-pre-gyp-build: node-pre-gyp configure && node-pre-gyp rebuild
         node-pre-gyp-package: node-pre-gyp package
         node-pre-gyp-github-release: node-pre-gyp-github publish --release
-        test: node spec
+        test: node proto/wtools/amid/deasync.test
     path:
       module.willfiles:
         criterion:
@@ -91,17 +88,19 @@ module:
           - ../build
           - ../binding
       proto:
-        path: ../index.js
+        path: ../proto
       export:
         path: '{path::proto}/**'
       doc:
         path: ../doc
       js:
-        path: ../index.js
+        path: ../proto
       cpp:
-        path: ../src
+        path: ../cpp
       build:
         path: ../build
+      binding:
+        path: ../binding
       node-pre-gyp:
         path: ../node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
       out.raw.debug:
@@ -162,21 +161,33 @@ module:
         path: '{path::out.*=}/source/Index.s'
       npm.proto.entry:
         path:
-          - ../index.js
+          - ../proto/wtools/amid/deasync/Main.ss
           - ../proto/node_modules/wdeasync
       exported.dir.proto.export:
         criterion:
           generated: 1
           content: proto
           export: 1
-        path: ..
+        path: ../proto
       exported.files.proto.export:
         criterion:
           generated: 1
           content: proto
           export: 1
         path:
-          - ../index.js
+          - ../proto
+          - ../proto/wtools
+          - ../proto/wtools/amid
+          - ../proto/wtools/amid/deasync
+          - ../proto/wtools/amid/deasync/Main.ss
+          - ../proto/wtools/amid/deasync/QuickTest.ss
+          - ../proto/wtools/amid/deasync.test
+          - ../proto/wtools/amid/deasync.test/index.js
+          - ../proto/wtools/amid/deasync.test/app
+          - ../proto/wtools/amid/deasync.test/app/exec.js
+          - ../proto/wtools/amid/deasync.test/app/request.js
+          - ../proto/wtools/amid/deasync.test/app/sleep.js
+          - ../proto/wtools/amid/deasync.test/app/worker-threads.js
     submodule:
       bindings:
         path: 'npm:///bindings#1.5.0'
@@ -353,7 +364,7 @@ module:
         src:
           filePath:
             '**': ''
-          prefixPath: ../index.js
+          prefixPath: ../proto
         mandatory: 1
         dstRewritingOnlyPreserving: 1
         linking: hardLinkMaybe
@@ -454,6 +465,13 @@ module:
           raw: compiled
           tests: no.tests
           content: npm
+        inherit:
+          - files.delete
+      clean.build.and.binding:
+        opts:
+          filePath:
+            - '{path::build}'
+            - '{path::binding}'
         inherit:
           - files.delete
       tst.proto:
@@ -584,24 +602,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -629,7 +629,7 @@ module:
           export: 1
       debug:
         steps:
-          - submodules.update
+          - clean.build.and.binding
           - node-gyp.build
         criterion:
           default: 1
@@ -691,9 +691,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wDeasync.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wDeasync
@@ -701,28 +700,14 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters:
-        - njs >= 10.0.0
-      keywords:
-        - async
-        - sync
-        - sleep
-        - async wrapper
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
-        - Volodymyr M. <volodymyr.migdal@gmail.com>
+      contributors: *ref_4
       native: 1
       npm.name: wdeasync
-      npm.scripts:
-        install: node-pre-gyp install --update-binary --fallback-to-build
-        postinstall: node postinstall.js
-        node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
-        node-pre-gyp-build: node-pre-gyp configure && node-pre-gyp rebuild
-        node-pre-gyp-package: node-pre-gyp package
-        node-pre-gyp-github-release: node-pre-gyp-github publish --release
-        test: node spec
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -773,17 +758,19 @@ module:
           - build
           - binding
       proto:
-        path: index.js
+        path: proto
       export:
         path: '{path::proto}/**'
       doc:
         path: doc
       js:
-        path: index.js
+        path: proto
       cpp:
-        path: src
+        path: cpp
       build:
         path: build
+      binding:
+        path: binding
       node-pre-gyp:
         path: node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
       out.raw.debug:
@@ -844,7 +831,7 @@ module:
         path: '{path::out.*=}/source/Index.s'
       npm.proto.entry:
         path:
-          - index.js
+          - proto/wtools/amid/deasync/Main.ss
           - proto/node_modules/wdeasync
     submodule:
       bindings:
@@ -1071,6 +1058,13 @@ module:
           content: npm
         inherit:
           - files.delete
+      clean.build.and.binding:
+        opts:
+          filePath:
+            - '{path::build}'
+            - '{path::binding}'
+        inherit:
+          - files.delete
       tst.proto:
         opts:
           shell: 'tst {path::proto}'
@@ -1226,7 +1220,7 @@ module:
           export: 1
       debug:
         steps:
-          - submodules.update
+          - clean.build.and.binding
           - node-gyp.build
         criterion:
           default: 1
@@ -1276,9 +1270,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 5e788229bd124e112a4fd1c3d4d21a45
-        size: 2110
+        hash: ed1c8d894b0c628b9ea087c2e0e9706b
+        size: 2136
       ../.im.will.yml:
-        hash: 0619a72ebdce288832be1010c9fbb09b
-        size: 5379
-      wDeasync.out.will.yml: *ref_0
+        hash: 45e0449cb92b379b27b4ea569b8b2465
+        size: 5540
