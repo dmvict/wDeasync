@@ -40,6 +40,7 @@ path:
   js: index.js
   cpp: cpp
   build: build
+  binding: binding
   node-pre-gyp: node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
   out.raw.debug:
     path: '{path::out}/debug'
@@ -177,6 +178,11 @@ step:
       raw: compiled
       tests: no.tests
       content: npm
+  clean.build.and.binding:
+    inherit: files.delete
+    filePath:
+      - '{path::build}'
+      - '{path::binding}'
   tst.proto:
     shell: 'tst {path::proto}'
     criterion:
@@ -202,7 +208,7 @@ build:
     criterion:
       default: 1
     steps:
-      - submodules.update
+      - clean.build.and.binding
       - node-gyp.build
   install:
     steps:
