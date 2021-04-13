@@ -27,6 +27,8 @@ about :
     node-pre-gyp-package : node-pre-gyp package
     node-pre-gyp-github-release : node-pre-gyp-github publish --release
     test : node proto/wtools/amid/deasync.test
+    quick-test : node proto/wtools/amid/deasync/QuickTest.ss
+
 
 path :
 
