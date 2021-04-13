@@ -1,64 +1,37 @@
 {
-  "name": "wdeasync",
-  "version": "0.1.59",
-  "description": "Turns async function into sync via JavaScript wrapper of Node event loop",
-  "main": "proto/wtools/amid/deasync/Main.ss",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
-  "contributors": [
-    {
-      "name": "Kostiantyn Wandalen",
-      "email": "wanalen@01.school"
-    },
-    {
-      "name": "Volodymyr M.",
-      "email": "volodymyr.migdal@gmail.com"
-    }
+  "name" : "wdeasync",
+  "version" : "0.1.59",
+  "description" : "Turns async function into sync via JavaScript wrapper of Node event loop",
+  "main" : "proto/wtools/amid/deasync/Main.ss",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors" :
+  [
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" },
+    { "name" : "Volodymyr M.", "email" : "volodymyr.migdal@gmail.com" }
   ],
-  "license": "MIT",
-  "scripts": {
-    "install": "node step/Install.ss",
-    "node-pre-gyp-install": "node-pre-gyp install --update-binary --fallback-to-build",
-    "node-pre-gyp-build": "node-pre-gyp configure && node-pre-gyp rebuild",
-    "node-pre-gyp-package": "node-pre-gyp package",
-    "node-pre-gyp-github-release": "node-pre-gyp-github publish --release",
-    "test": "node proto/wtools/amid/deasync.test",
-    "clean": "rm -rf build node_modules binding",
-    "quick-test": "node proto/wtools/amid/deasync/QuickTest.ss"
+  "license" : "MIT",
+  "scripts" :
+  {
+    "install" : "node step/Install.ss",
+    "node-pre-gyp-install" : "node-pre-gyp install --update-binary --fallback-to-build",
+    "node-pre-gyp-build" : "node-pre-gyp configure && node-pre-gyp rebuild",
+    "node-pre-gyp-package" : "node-pre-gyp package",
+    "node-pre-gyp-github-release" : "node-pre-gyp-github publish --release",
+    "test" : "node proto/wtools/amid/deasync.test",
+    "clean" : "rm -rf build node_modules binding"
   },
-  "files": [
-    "binding.gyp",
-    "cpp",
-    "step",
-    "proto/node_modules",
-    "proto/wtools/amid/deasync"
-  ],
-  "binary": {
-    "module_name": "deasync",
-    "module_path": "./Release/",
-    "host": "https://github.com/Wandalen/wDeasync/releases/download/",
-    "remote_path": "{version}"
+  "files" : [ "binding.gyp", "cpp", "step", "proto/node_modules", "proto/wtools/amid/deasync" ],
+  "binary" :
+  {
+    "module_name" : "deasync",
+    "module_path" : "./Release/",
+    "host" : "https://github.com/Wandalen/wDeasync/releases/download/",
+    "remote_path" : "{version}"
   },
-  "dependencies": {
-    "bindings": "^1.5.0",
-    "node-addon-api": "^1.7.1",
-    "@mapbox/node-pre-gyp": "1.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Wandalen/wDeasync.git"
-  },
-  "homepage": "https://github.com/Wandalen/wDeasync",
-  "keywords": [
-    "async",
-    "sync",
-    "sleep",
-    "async wrapper"
-  ],
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "devDependencies": {
-    "require-directory": "^2.1.1",
-    "node-pre-gyp-github": ""
-  }
+  "dependencies" : { "bindings" : "^1.5.0", "node-addon-api" : "^1.7.1", "@mapbox/node-pre-gyp" : "1.0.2" },
+  "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wDeasync.git" },
+  "homepage" : "https://github.com/Wandalen/wDeasync",
+  "keywords" : [ "async", "sync", "sleep", "async wrapper" ],
+  "engines" : { "node" : ">=10.0.0" },
+  "devDependencies" : { "require-directory" : "^2.1.1", "node-pre-gyp-github" : "1.4.3" }
 }
