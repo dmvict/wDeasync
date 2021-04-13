@@ -2,13 +2,10 @@ format: outwillfile-2.0
 root:
   - wDeasync.out
 consistency:
-  wDeasync.out.will.yml: &ref_0
-    hash: 4f9e197eb6f615f0eee5659d6f3d95ce
-    size: 33312
-  ../.ex.will.yml: &ref_1
-    hash: ed1c8d894b0c628b9ea087c2e0e9706b
-    size: 2136
-  ../.im.will.yml: &ref_2
+  ../.ex.will.yml: &ref_0
+    hash: 455428f836a11ca6a13b5ac1a5e61875
+    size: 2198
+  ../.im.will.yml: &ref_1
     hash: 98f669c60bc3ba0e944613ff3ad612a2
     size: 5506
 module:
@@ -19,21 +16,21 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
-      keywords:
+      keywords: &ref_3
         - async
         - sync
         - sleep
         - async wrapper
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       native: 1
       npm.name: wdeasync
-      npm.scripts:
+      npm.scripts: &ref_5
         install: node-pre-gyp install --update-binary --fallback-to-build
         postinstall: node postinstall.js
         node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
@@ -41,6 +38,7 @@ module:
         node-pre-gyp-package: node-pre-gyp package
         node-pre-gyp-github-release: node-pre-gyp-github publish --release
         test: node proto/wtools/amid/deasync.test
+        quick-test: node proto/wtools/amid/deasync/QuickTest.ss
     path:
       module.willfiles:
         criterion:
@@ -605,24 +603,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -712,9 +692,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wDeasync.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wDeasync
@@ -722,28 +701,14 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters:
-        - njs >= 10.0.0
-      keywords:
-        - async
-        - sync
-        - sleep
-        - async wrapper
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
-        - Volodymyr M. <volodymyr.migdal@gmail.com>
+      contributors: *ref_4
       native: 1
       npm.name: wdeasync
-      npm.scripts:
-        install: node-pre-gyp install --update-binary --fallback-to-build
-        postinstall: node postinstall.js
-        node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
-        node-pre-gyp-build: node-pre-gyp configure && node-pre-gyp rebuild
-        node-pre-gyp-package: node-pre-gyp package
-        node-pre-gyp-github-release: node-pre-gyp-github publish --release
-        test: node proto/wtools/amid/deasync.test
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1305,9 +1270,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: ed1c8d894b0c628b9ea087c2e0e9706b
-        size: 2136
+        hash: 455428f836a11ca6a13b5ac1a5e61875
+        size: 2198
       ../.im.will.yml:
         hash: 98f669c60bc3ba0e944613ff3ad612a2
         size: 5506
-      wDeasync.out.will.yml: *ref_0
