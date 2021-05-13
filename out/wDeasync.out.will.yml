@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wDeasync.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: 455428f836a11ca6a13b5ac1a5e61875
-    size: 2198
-  ../.im.will.yml: &ref_1
-    hash: 98f669c60bc3ba0e944613ff3ad612a2
-    size: 5506
+  ../will.yml: &ref_0
+    hash: 2f41c0a1577c7acd7afb8167561fea89
+    size: 7369
 module:
   wDeasync.out:
     about:
@@ -16,24 +13,23 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters: &ref_2
-        - njs >= 10.0.0
-      keywords: &ref_3
+      license: MIT
+      native: 1
+      npm.name: wdeasync
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
         - async
         - sync
         - sleep
         - async wrapper
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors: &ref_2
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
-      native: 1
-      npm.name: wdeasync
-      npm.scripts: &ref_5
+      interpreters: &ref_3
+        - njs >= 10.0.0
+      npm.scripts: &ref_4
         install: node-pre-gyp install --update-binary --fallback-to-build
         postinstall: node postinstall.js
-        node-pre-gyp-install: node-pre-gyp install --update-binary --fallback-to-build
         node-pre-gyp-build: node-pre-gyp configure && node-pre-gyp rebuild
         node-pre-gyp-package: node-pre-gyp package
         node-pre-gyp-github-release: node-pre-gyp-github publish --release
@@ -51,15 +47,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -208,7 +200,7 @@ module:
         enabled: 0
         criterion:
           development: 0
-      node-pre-gyp:
+      '@mapbox':
         path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
@@ -692,8 +684,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wDeasync
@@ -701,27 +692,23 @@ module:
       description: Turns async function into sync via JavaScript wrapper of Node event loop
       enabled: 1
       version: 0.1.20
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       native: 1
       npm.name: wdeasync
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -852,7 +839,7 @@ module:
         enabled: 0
         criterion:
           development: 0
-      node-pre-gyp:
+      '@mapbox':
         path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
@@ -1269,9 +1256,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: 455428f836a11ca6a13b5ac1a5e61875
-        size: 2198
-      ../.im.will.yml:
-        hash: 98f669c60bc3ba0e944613ff3ad612a2
-        size: 5506
+      ../will.yml:
+        hash: 2f41c0a1577c7acd7afb8167561fea89
+        size: 7369
