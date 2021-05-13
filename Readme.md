@@ -1,6 +1,6 @@
 # module::wDeasync [![status](https://github.com/Wandalen/wDeasync/actions/workflows/StandardPublish.yml/badge.svg)](https://github.com/Wandalen/wDeasync/actions/workflows/StandardPublish.yml) [![NPM version](http://img.shields.io/npm/v/wdeasync.svg)](https://www.npmjs.org/package/wdeasync)
 
-DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. The core of deasync is writen in C++.
+Deasync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. The core of deasync is writen in C++.
 
 ## About this fork
 
