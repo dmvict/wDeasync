@@ -34,7 +34,7 @@ try {
 function deasync(fn) {
 	return function () {
 		var done = false
-		var args = Array.prototype.slice.apply(arguments).concat(cb)
+		const args = Array.prototype.slice.apply(arguments).concat(cb)
 		var err
 		var res
 
