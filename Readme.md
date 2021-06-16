@@ -1,4 +1,4 @@
-# module::wDeasync [![status](https://github.com/Wandalen/wDeasync/actions/workflows/StandardPublish.yml/badge.svg)](https://github.com/Wandalen/wDeasync/actions/workflows/StandardPublish.yml) [![NPM version](http://img.shields.io/npm/v/wdeasync.svg)](https://www.npmjs.org/package/wdeasync)
+# module::wDeasync [![status](https://img.shields.io/github/workflow/status/Wandalen/wDeasync/GypPublish?label=publish%3A)](https://github.com/Wandalen/wDeasync/actions/workflows/GypPublish.yml) [![NPM version](http://img.shields.io/npm/v/wdeasync.svg)](https://www.npmjs.org/package/wdeasync)
 
 Deasync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. The core of deasync is writen in C++.
 
