@@ -3,7 +3,7 @@ root:
   - wDeasync.out
 consistency:
   ../will.yml: &ref_0
-    hash: 2f41c0a1577c7acd7afb8167561fea89
+    hash: d96c60a8d63e60d64e00e89b39eac4e6
     size: 7369
 module:
   wDeasync.out:
@@ -201,7 +201,7 @@ module:
         criterion:
           development: 0
       '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -840,7 +840,7 @@ module:
         criterion:
           development: 0
       '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1257,5 +1257,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 2f41c0a1577c7acd7afb8167561fea89
+        hash: d96c60a8d63e60d64e00e89b39eac4e6
         size: 7369
