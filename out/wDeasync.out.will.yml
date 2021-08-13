@@ -3,8 +3,8 @@ root:
   - wDeasync.out
 consistency:
   ../will.yml: &ref_0
-    hash: d96c60a8d63e60d64e00e89b39eac4e6
-    size: 7369
+    hash: 3feb17aa49ef76fb855b609ca0baf20d
+    size: 7375
 module:
   wDeasync.out:
     about:
@@ -195,7 +195,7 @@ module:
         criterion:
           development: 0
       node-gyp:
-        path: 'npm:///node-gyp'
+        path: 'npm:///node-gyp#8.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -834,7 +834,7 @@ module:
         criterion:
           development: 0
       node-gyp:
-        path: 'npm:///node-gyp'
+        path: 'npm:///node-gyp#8.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1257,5 +1257,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: d96c60a8d63e60d64e00e89b39eac4e6
-        size: 7369
+        hash: 3feb17aa49ef76fb855b609ca0baf20d
+        size: 7375
