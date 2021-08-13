@@ -315,7 +315,7 @@ submodule:
     criterion:
       development: 0
   node-gyp:
-    path: 'npm:///node-gyp'
+    path: 'npm:///node-gyp#8.1.0'
     enabled: 0
     criterion:
       development: 0

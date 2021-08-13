@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "node-addon-api": "^1.7.1",
+    "node-gyp": "8.1.0",
     "bindings": "^1.5.0",
     "@mapbox/node-pre-gyp": "1.0.5"
   },
