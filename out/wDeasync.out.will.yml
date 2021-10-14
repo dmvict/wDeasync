@@ -3,7 +3,7 @@ root:
   - wDeasync.out
 consistency:
   ../will.yml: &ref_0
-    hash: 3feb17aa49ef76fb855b609ca0baf20d
+    hash: 03ed69def62bfccf2a735a5b059b29c8
     size: 7375
 module:
   wDeasync.out:
@@ -11,7 +11,7 @@ module:
       name: wDeasync
       org: noorg
       description: Turns async function into sync via JavaScript wrapper of Node event loop
-      enabled: 1
+      enabled: 0
       version: 0.1.20
       license: MIT
       native: 1
@@ -690,7 +690,7 @@ module:
       name: wDeasync
       org: noorg
       description: Turns async function into sync via JavaScript wrapper of Node event loop
-      enabled: 1
+      enabled: 0
       version: 0.1.20
       license: MIT
       native: 1
@@ -1257,5 +1257,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 3feb17aa49ef76fb855b609ca0baf20d
+        hash: 03ed69def62bfccf2a735a5b059b29c8
         size: 7375
