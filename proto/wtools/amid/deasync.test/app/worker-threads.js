@@ -6,6 +6,6 @@ const { Worker, isMainThread } = require('worker_threads')
 if (isMainThread) {
   new Worker(__filename)
 } else {
-  const deasync = require('../../index.js')
+  const deasync = require('../../deasync/Main.ss')
   deasync.sleep(100)
 }

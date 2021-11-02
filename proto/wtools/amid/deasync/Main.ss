@@ -17,23 +17,24 @@ if (process.platform === 'win32') Math.random()
 // Look for binary for this platform
 var nodeV = 'node-' + /[0-9]+\.[0-9]+/.exec(process.versions.node)[0]
 var nodeVM = 'node-' + /[0-9]+/.exec(process.versions.node)[0]
-var modPath = path.join(__dirname, 'bin', process.platform + '-' + process.arch + '-' + nodeV, 'deasync')
+var rootDirPath = path.join(__dirname, '../../../..');
+var modPath = path.join(rootDirPath, 'bin', process.platform + '-' + process.arch + '-' + nodeV, 'deasync')
 try {
 	try {
 		fs.statSync(modPath + '.node')
 	} catch (ex) {
-		modPath = path.join(__dirname, 'bin', process.platform + '-' + process.arch + '-' + nodeVM, 'deasync')
+		modPath = path.join(rootDirPath, 'bin', process.platform + '-' + process.arch + '-' + nodeVM, 'deasync')
 		fs.statSync(modPath + '.node')
 	}
 	binding = require(modPath)
 } catch (ex) {
-	binding = require('bindings')('deasync')
+	binding = require('bindings')({ module_root : rootDirPath, bindings : 'deasync'})
 }
 
 function deasync(fn) {
 	return function () {
 		var done = false
-		var args = Array.prototype.slice.apply(arguments).concat(cb)
+		const args = Array.prototype.slice.apply(arguments).concat(cb)
 		var err
 		var res
 
