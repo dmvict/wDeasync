@@ -3,11 +3,11 @@
   "version": "0.1.96",
   "description": "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main": "proto/wtools/amid/deasync/Main.ss",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "contributors": [
     {
       "name": "Kostiantyn Wandalen",
-      "email": "wanalen@01.school"
+      "email": "wandalen@obox.systems"
     },
     {
       "name": "Volodymyr M.",
