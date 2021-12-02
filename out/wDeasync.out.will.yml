@@ -3,15 +3,15 @@ root:
   - wDeasync.out
 consistency:
   ../will.yml: &ref_0
-    hash: 03ed69def62bfccf2a735a5b059b29c8
-    size: 7375
+    hash: 731384196e281f6d7f08973f996f923a
+    size: 7242
 module:
   wDeasync.out:
     about:
       name: wDeasync
       org: noorg
       description: Turns async function into sync via JavaScript wrapper of Node event loop
-      enabled: 0
+      enabled: 1
       version: 0.1.20
       license: MIT
       native: 1
@@ -402,9 +402,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -608,12 +605,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -690,7 +681,7 @@ module:
       name: wDeasync
       org: noorg
       description: Turns async function into sync via JavaScript wrapper of Node event loop
-      enabled: 0
+      enabled: 1
       version: 0.1.20
       license: MIT
       native: 1
@@ -987,9 +978,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1193,12 +1181,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1257,5 +1239,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 03ed69def62bfccf2a735a5b059b29c8
-        size: 7375
+        hash: 731384196e281f6d7f08973f996f923a
+        size: 7242
