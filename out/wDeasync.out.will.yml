@@ -168,7 +168,6 @@ module:
           export: 1
         path:
           - ../proto
-          - ../proto/node_modules
           - ../proto/wtools
           - ../proto/wtools/amid
           - ../proto/wtools/amid/deasync
