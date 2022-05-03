@@ -1,6 +1,6 @@
 {
   "name": "wdeasync",
-  "version": "0.1.106",
+  "version": "0.1.107",
   "description": "Turns async function into sync via JavaScript wrapper of Node event loop",
   "main": "proto/wtools/amid/deasync/Main.ss",
   "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
@@ -39,10 +39,14 @@
     "remote_path": "{version}"
   },
   "dependencies": {
-    "node-gyp": "8.1.0",
+    "node-gyp": "9.0.0",
     "node-addon-api": "^1.7.1",
     "bindings": "^1.5.0",
-    "@mapbox/node-pre-gyp": "1.0.5"
+    "@mapbox/node-pre-gyp": "1.0.9"
+  },
+  "devDependencies": {
+    "require-directory": "^2.1.1",
+    "@mathquis/node-pre-gyp-github": "1.0.1"
   },
   "repository": {
     "type": "git",
@@ -57,9 +61,5 @@
   ],
   "engines": {
     "node": ">=10.0.0"
-  },
-  "devDependencies": {
-    "require-directory": "^2.1.1",
-    "@mathquis/node-pre-gyp-github": "1.0.2"
   }
 }

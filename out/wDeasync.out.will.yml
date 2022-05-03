@@ -3,8 +3,8 @@ root:
   - wDeasync.out
 consistency:
   ../will.yml: &ref_0
-    hash: 731384196e281f6d7f08973f996f923a
-    size: 7242
+    hash: 521a802bfbacc2d0579df93d720f90a2
+    size: 7235
 module:
   wDeasync.out:
     about:
@@ -181,32 +181,30 @@ module:
           - ../proto/wtools/amid/deasync.test/app/sleep.js
           - ../proto/wtools/amid/deasync.test/app/worker-threads.js
     submodule:
-      bindings:
-        path: 'npm:///bindings#1.5.0'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
-      node-addon-api:
-        path: 'npm:///node-addon-api#1.7.1'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
       node-gyp:
-        path: 'npm:///node-gyp#8.1.0'
+        path: 'npm:///node-gyp!9.0.0'
+        autoExporting: 0
+        enabled: 0
+      node-addon-api:
+        path: 'npm:///node-addon-api!^1.7.1'
+        autoExporting: 0
+        enabled: 0
+      bindings:
+        path: 'npm:///bindings!^1.5.0'
+        autoExporting: 0
+        enabled: 0
+      node-pre-gyp:
+        path: 'npm:///@mapbox/node-pre-gyp!1.0.9'
+        autoExporting: 0
+        enabled: 0
+      require-directory:
+        path: 'npm:///require-directory!^2.1.1'
         autoExporting: 0
         enabled: 0
         criterion:
-          development: 0
-      '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
+          development: 1
       node-pre-gyp-github:
-        path: 'npm:///node-pre-gyp-github'
+        path: 'npm:///@mathquis/node-pre-gyp-github!1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -811,32 +809,30 @@ module:
         path:
           - proto/wtools/amid/deasync/Main.ss
     submodule:
-      bindings:
-        path: 'npm:///bindings#1.5.0'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
-      node-addon-api:
-        path: 'npm:///node-addon-api#1.7.1'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
       node-gyp:
-        path: 'npm:///node-gyp#8.1.0'
+        path: 'npm:///node-gyp!9.0.0'
+        autoExporting: 0
+        enabled: 0
+      node-addon-api:
+        path: 'npm:///node-addon-api!^1.7.1'
+        autoExporting: 0
+        enabled: 0
+      bindings:
+        path: 'npm:///bindings!^1.5.0'
+        autoExporting: 0
+        enabled: 0
+      node-pre-gyp:
+        path: 'npm:///@mapbox/node-pre-gyp!1.0.9'
+        autoExporting: 0
+        enabled: 0
+      require-directory:
+        path: 'npm:///require-directory!^2.1.1'
         autoExporting: 0
         enabled: 0
         criterion:
-          development: 0
-      '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 0
+          development: 1
       node-pre-gyp-github:
-        path: 'npm:///node-pre-gyp-github'
+        path: 'npm:///@mathquis/node-pre-gyp-github!1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1238,5 +1234,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 731384196e281f6d7f08973f996f923a
-        size: 7242
+        hash: 521a802bfbacc2d0579df93d720f90a2
+        size: 7235
