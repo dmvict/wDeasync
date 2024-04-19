@@ -45,7 +45,7 @@ jobs :
       run : npm install -g npm@latest-6
     - name : Update node-gyp
       run : |
-        npm install --global node-gyp@latest
+        npm install --global node-gyp@9.0.0
     - run : npm run clean
     - run : npm install
     - run : npm list
